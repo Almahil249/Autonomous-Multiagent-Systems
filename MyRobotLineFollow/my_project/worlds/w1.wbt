@@ -1,0 +1,349 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/lego/protos/LegoWheel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.2201163610254107 0.4715086661505259 0.8539486901177862 1.000589741712526
+  position -8.406967181105298 -11.202535564102842 8.379242960508943
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0.16 0.28 0
+  rotation 1 0 0 0
+  floorSize 4 2.7
+  floorAppearance PBRAppearance {
+    roughnessMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/parquetry/mosaic_parquetry_roughness.jpg"
+      ]
+    }
+    metalness 0
+    IBLStrength 40
+    normalMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/parquetry/mosaic_parquetry_normal.jpg"
+      ]
+    }
+    occlusionMap ImageTexture {
+      url [
+        "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/textures/parquetry/mosaic_parquetry_occlusion.jpg"
+      ]
+    }
+  }
+}
+Robot {
+  translation 1.62103 0.365658 0.0951627
+  rotation 0.041860210780941126 0.020758781391537647 0.9989078014253937 -2.1987374174520635
+  children [
+    DEF SensorL DistanceSensor {
+      translation 0.05 0.01 -0.04
+      rotation 0 1 0 1.5708
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.8 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "SensorL"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+      type "infra-red"
+    }
+    DEF SensorR DistanceSensor {
+      translation 0.05 -0.01 -0.04
+      rotation 0 1 0 1.5708
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0.8 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "SensorR"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+      type "infra-red"
+    }
+    DEF Sensor1 DistanceSensor {
+      translation 0.05 0 0.01
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "Sensor1(1)"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DEF Sensor2 DistanceSensor {
+      translation 0.05 0.04 0.01
+      rotation 0 0 1 0.7853996938995746
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "Sensor2"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DEF Sensor3 DistanceSensor {
+      translation 0 0.04 0.01
+      rotation 0 0 1 1.57079633
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "Sensor3"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DEF Sensor4 DistanceSensor {
+      translation -0.05 0.04 0.01
+      rotation 0 0 1 2.35619449
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "Sensor4"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DEF Sensor5 DistanceSensor {
+      translation -0.05 0 0.01
+      rotation 0 0 1 3.14159265
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "Sensor5"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DEF Sensor6 DistanceSensor {
+      translation -0.05 -0.04 0.01
+      rotation 0 0 1 -2.3561944871795863
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "Sensor6"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DEF Sensor7 DistanceSensor {
+      translation 0 -0.04 0.01
+      rotation 0 0 1 -1.5707963271795862
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "Sensor7"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DEF Sensor8 DistanceSensor {
+      translation 0.05 -0.04 0.01
+      rotation 0 0 1 -0.7853996938995746
+      children [
+        DEF Sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0 0 1
+            roughness 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.015 0.015 0.015
+          }
+        }
+      ]
+      name "Sensor8"
+      boundingObject USE Sensor
+      physics Physics {
+      }
+    }
+    DEF Right2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 61714.1880484006
+        axis 0 1 0
+        anchor 0.03 -0.05 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "Right2"
+        }
+      ]
+      endPoint LegoWheel {
+        translation 0.029997954985068593 -0.050000000400255304 -0.049998456684257134
+        rotation 0.01496874595670257 0.9997587221070595 0.016075889255118065 0.742032528173165
+        name "Right2"
+      }
+    }
+    DEF Left2 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 101837.75968458815
+        axis 0 1 0
+        anchor 0.03 0.05 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "Left2"
+        }
+      ]
+      endPoint LegoWheel {
+        translation 0.030000792501144558 0.049999999608291545 -0.05000237854947561
+        rotation -0.13761788620699225 0.9893931357861998 0.0465031209175203 6.174262376766802
+        name "Left2"
+      }
+    }
+    DEF Right1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 61712.07175025593
+        axis 0 1 0
+        anchor -0.03 -0.05 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "Right1"
+        }
+      ]
+      endPoint LegoWheel {
+        translation -0.03000198567619928 -0.05000000038863325 -0.04999850127765267
+        rotation 0.012169577752745827 -0.9999216179582024 -0.0029426717741187353 1.374505534630676
+        name "Right1"
+      }
+    }
+    DEF Left1 HingeJoint {
+      jointParameters HingeJointParameters {
+        position 101837.76173226965
+        axis 0 1 0
+        anchor -0.03 0.05 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "Left1"
+        }
+      ]
+      endPoint LegoWheel {
+        translation -0.029999196763602434 0.049999999602955675 -0.05000241124561734
+        rotation -0.14026947301604936 0.9889857704445507 0.04724003384840073 6.176287952877384
+        name "Left1"
+      }
+    }
+    DEF RobotBody Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.4 0
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.08 0.08
+      }
+    }
+  ]
+  boundingObject USE RobotBody
+  physics Physics {
+  }
+  controller "LineFollow"
+}
+Transform {
+  translation 1 1 -0.0018
+  scale 0.03 0.03 0.02
+  children [
+    Shape {
+      appearance Parquetry {
+        type "dark strip"
+        colorOverride 0 0 0
+        IBLStrength 0.01
+      }
+      geometry Mesh {
+        url [
+          "../tinker.obj"
+        ]
+      }
+    }
+  ]
+}
