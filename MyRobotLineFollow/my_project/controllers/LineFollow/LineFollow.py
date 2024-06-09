@@ -1,4 +1,4 @@
-"""Wall_follower controller."""
+"""Line Follower controller."""
 
 # You may need to import some classes of the controller module. Ex:
 from controller import Robot, Motor, DistanceSensor
@@ -6,7 +6,7 @@ import random
 
 def run_robot(robot):
     timestep = int(robot.getBasicTimeStep())
-    max_speed = 6.28
+    max_speed = 6.28 
 
     L1  = robot.getDevice( 'Left1' )
     R1 = robot.getDevice( 'Right1' )
@@ -50,22 +50,26 @@ def run_robot(robot):
         right_speed = max_speed
         left_speed = max_speed
         
-        L_line = L_val > 900
-        R_line = R_val > 900
+        L_line = L_val > 990
+        R_line = R_val > 990
         
         
         if flag:
+            print("\n Searching for a Line\n")
             
             if L_line or R_line:
+                print("Line found!\n")
                 flag = False
             psRightValue = S2.getValue()
             psLeftValue = S8.getValue()
-        
-            rightObstacle= psRightValue<900
-            leftObstacle= psLeftValue<900
+            
 
-            randL = random.uniform(0.01, 0.99)
-            randR = random.uniform(0.01, 0.99)
+        
+            rightObstacle= psRightValue<990
+            leftObstacle= psLeftValue<990
+
+            randL = random.uniform(0.2, 0.99)
+            randR = random.uniform(0.2, 0.99)
 
             left_speed =  randL * max_speed
             right_speed = randR * max_speed
@@ -73,8 +77,8 @@ def run_robot(robot):
             
             if rightObstacle and leftObstacle:
                 print("BOTH Obstacle")
-                left_speed = -max_speed
-                right_speed = -max_speed
+                left_speed = -6.28
+                right_speed = -6.28
             
             elif rightObstacle:
                 print("Right Obstacle")
@@ -85,8 +89,7 @@ def run_robot(robot):
                 print("Left Obstacle")
                 left_speed =  -0.5 * max_speed
                 right_speed = max_speed
-             
-       
+
         else:
             print("sensor: Left value: {}".format(L_val))
             print("sensor: Right value: {}".format(R_val))
@@ -101,6 +104,10 @@ def run_robot(robot):
                 right_speed = -max_speed 
                 print("Drive Right")
                 print("________________________________________________")
+            elif R_line == False and L_line == False:
+                flag = True
+                print("\n############## No Line Detected ##############\n")
+
             else:
                 print("Drive FW")
                 print("________________________________________________")

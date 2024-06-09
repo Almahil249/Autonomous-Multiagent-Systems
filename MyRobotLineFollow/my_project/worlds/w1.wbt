@@ -9,8 +9,8 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.2201163610254107 0.4715086661505259 0.8539486901177862 1.000589741712526
-  position -8.406967181105298 -11.202535564102842 8.379242960508943
+  orientation 0.10078520320280208 0.78160744131646 -0.6155746506266373 0.4129461045056125
+  position -4.435954509706624 2.1381183488484066 1.8026455395213243
 }
 TexturedBackground {
 }
@@ -41,8 +41,8 @@ RectangleArena {
   }
 }
 Robot {
-  translation 1.62103 0.365658 0.0951627
-  rotation 0.041860210780941126 0.020758781391537647 0.9989078014253937 -2.1987374174520635
+  translation 1.41608 0.167498 0.07231
+  rotation 7.270618726088165e-05 5.507251718997005e-05 -0.9999999958404141 -2.2898905570607546
   children [
     DEF SensorL DistanceSensor {
       translation 0.05 0.01 -0.04
@@ -247,7 +247,7 @@ Robot {
     }
     DEF Right2 HingeJoint {
       jointParameters HingeJointParameters {
-        position 61714.1880484006
+        position 64114.32855395295
         axis 0 1 0
         anchor 0.03 -0.05 -0.05
       }
@@ -257,14 +257,14 @@ Robot {
         }
       ]
       endPoint LegoWheel {
-        translation 0.029997954985068593 -0.050000000400255304 -0.049998456684257134
-        rotation 0.01496874595670257 0.9997587221070595 0.016075889255118065 0.742032528173165
+        translation 0.029997900348943327 -0.050000000400255304 -0.04999853188045716
+        rotation 0.015394852439955064 0.9997344555086375 0.017146923549142917 0.7057599210859147
         name "Right2"
       }
     }
     DEF Left2 HingeJoint {
       jointParameters HingeJointParameters {
-        position 101837.75968458815
+        position 104725.08679361084
         axis 0 1 0
         anchor 0.03 0.05 -0.05
       }
@@ -274,14 +274,14 @@ Robot {
         }
       ]
       endPoint LegoWheel {
-        translation 0.030000792501144558 0.049999999608291545 -0.05000237854947561
-        rotation -0.13761788620699225 0.9893931357861998 0.0465031209175203 6.174262376766802
+        translation 0.029999704454177156 0.049999999608291545 -0.04999751037988066
+        rotation -0.003282809513688802 0.9999686651122053 -0.007203607111108082 3.23728018665755
         name "Left2"
       }
     }
     DEF Right1 HingeJoint {
       jointParameters HingeJointParameters {
-        position 61712.07175025593
+        position 64112.212365069594
         axis 0 1 0
         anchor -0.03 -0.05 -0.05
       }
@@ -291,14 +291,14 @@ Robot {
         }
       ]
       endPoint LegoWheel {
-        translation -0.03000198567619928 -0.05000000038863325 -0.04999850127765267
-        rotation 0.012169577752745827 -0.9999216179582024 -0.0029426717741187353 1.374505534630676
+        translation -0.030002038578015897 -0.05000000038863325 -0.0499985740693159
+        rotation 0.011959252337048245 -0.9999249373003349 -0.002663840922439728 1.410675289124556
         name "Right1"
       }
     }
     DEF Left1 HingeJoint {
       jointParameters HingeJointParameters {
-        position 101837.76173226965
+        position 104725.08895769942
         axis 0 1 0
         anchor -0.03 0.05 -0.05
       }
@@ -308,8 +308,8 @@ Robot {
         }
       ]
       endPoint LegoWheel {
-        translation -0.029999196763602434 0.049999999602955675 -0.05000241124561734
-        rotation -0.14026947301604936 0.9889857704445507 0.04724003384840073 6.176287952877384
+        translation -0.03000029915928379 0.049999999602955675 -0.04999747615415281
+        rotation -0.003276022781699856 0.9999686626020705 -0.007207044370636404 3.2394442061622026
         name "Left1"
       }
     }
@@ -330,7 +330,7 @@ Robot {
   controller "LineFollow"
 }
 Transform {
-  translation 1 1 -0.0018
+  translation 1 1 0
   scale 0.03 0.03 0.02
   children [
     Shape {
