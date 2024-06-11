@@ -33,9 +33,9 @@ for sensor in ps:
 file = open("path.txt", "a")
 file.write("!!Run\n")
 
-def write_position(status):
+def write_position(status, left_random, right_random):
     pos = gps.getValues()
-    file.write(f"{pos[0]}, {pos[1]}, {pos[2]}, Status{status}\n")
+    file.write(f"{pos[0]}, {pos[1]}, {pos[2]}, {status}, {left_random}, {right_random}\n")
 
 iteration = 0
 start_time = time.time()
@@ -63,14 +63,14 @@ while robot.step(TIME_STEP) != -1:
         
         # stochastic obstacle avoidance
         if is_start: #turn 360
-            write_position('On_start')
+            write_position('On_start', 1, 1)
             left_motor.setVelocity(MAX_SPEED)
             right_motor.setVelocity(-MAX_SPEED)
             print(grnd.getValue())
             print("Start")
             continue
         if is_end: #stop
-            write_position("Target")
+            write_position("Target", 1, 1)
             left_motor.setVelocity(0.0)
             right_motor.setVelocity(0.0)
             print(grnd.getValue())
@@ -78,17 +78,17 @@ while robot.step(TIME_STEP) != -1:
             break
         if left_obstacle:
             # Turn right
-            write_position('obstacle_left_turn_right')
+            write_position('left_obstacle', left_random, right_random)
             left_motor.setVelocity(MAX_SPEED*left_random)
             right_motor.setVelocity(-MAX_SPEED*right_random)
         elif right_obstacle:
             # Turn left
-            write_position('obstacle_right_turn_left')
+            write_position('right_obstacle', left_random, right_random)
             left_motor.setVelocity(-MAX_SPEED*left_random)
             right_motor.setVelocity(MAX_SPEED*right_random)
         else:
             # Move forward
-            write_position('Move_forward')
+            write_position('Move_forward', 1, 1)
             left_motor.setVelocity(MAX_SPEED)
             right_motor.setVelocity(MAX_SPEED)
 end_time = time.time()
@@ -97,4 +97,9 @@ print("Number of iterations: ", iteration)
 file.write(f"!T: {end_time - start_time}\n")
 file.write(f"!I: {iteration}\n")
 file.close()
+
+# call and run the Main.py 
+import Main as M
+
+M.main()
 

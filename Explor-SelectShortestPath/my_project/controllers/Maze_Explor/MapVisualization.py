@@ -1,12 +1,5 @@
-#read path.txt wich contains the path of the robot
-# it is gps coordinates x.y,z
-#each line is a point of the path
-#each point is separated by a comma like tis -1.9000003736837092, 1.0268373016959478, 0.09854148554694897
-# each run of the robot is separated "!!Run" line
-
 import matplotlib.pyplot as plt
 import numpy as np
-import sys
 
 def read_file(file_name):
     file = open(file_name, "r")
@@ -45,7 +38,6 @@ def plot_points(points):
             x.append(point[0])
             y.append(point[1])
         plt.plot(x, y)
-    #export the plot to a file so it can be used in the report
     plt.savefig("map.png")
     plt.show()
 
@@ -83,19 +75,28 @@ def plot_points_and_shortest_path(points):
 
 
 
+def calculate_distance(points):
+    distance = []
+    for run in points:
+        dist = 0
+        for i in range(len(run) - 1):
+            dist += np.sqrt((run[i][0] - run[i+1][0])**2 + (run[i][1] - run[i+1][1])**2)
+        distance.append(dist)
+    return distance
 
 
 def main(): 
     file_name = file_name = 'path.txt'
     lines = read_file(file_name)
     points, Time, Itieartion  = get_points(lines)
+    distance = calculate_distance(points)
     plot_points_and_shortest_path(points)
     plot_points(points)
     plot_shortest_path()
     export_map(points)
     ifile = open("ExplorSummary.txt", "w")
     for i in range(len(Itieartion)):
-        ifile.write(f"Run {i+1}: Time: {Time[i]} Iterations: {Itieartion[i]}\n")
+        ifile.write(f"Run {i+1}: Time: {Time[i]} Iterations: {Itieartion[i]} Distance: {distance[i]}\n")
     ifile.close()
 
 
