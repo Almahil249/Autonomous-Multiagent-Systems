@@ -5,7 +5,7 @@ sceneTreePerspectives: 000000ff00000001000000030000002200000292000000fa010000000
 maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
-textFiles: 1 "controllers/Maze_Solver/Maze_Solver.py" "controllers/Maze_Explor/Maze_Explor.py"
+textFiles: 0 "controllers/Maze_Solver/Maze_Solver.py" "controllers/Maze_Explor/Maze_Explor.py"
 globalOptionalRendering: DistanceSensorRays::CoordinateSystem::JointAxes::RangeFinderFrustums::LidarRaysPaths
 consoles: Console:All:All
 renderingDevicePerspectives: e-puck(1):camera;1;1;0;0
